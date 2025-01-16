@@ -1,0 +1,11 @@
+
+        body { font-family: Arial, sans-serif; background-color: #f5d587; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .calculator { background-color: #a8e6cf; padding: 15px; border-radius: 10px; box-shadow: 10px 10px 15px rgba(0,0,0,0.3); }
+        .display-container { display: flex; align-items: center; }
+        .display { width: 70%; height: 50px; text-align: right; font-size: 15px; border-radius: 5px; margin-bottom: 5px; padding-right: 5px; }
+        .button { width: 80px; height: 65px; margin: 15px; font-size: 35px; border: none; border-radius: 5px; cursor: pointer; }
+        .button.operator { background-color: #ffd3b6; }
+        .button.equal { background-color: #ffecb3; width: 80px; }
+        .button.clear { background-color: #f5d587; color: #fff; margin-right: 13px; }
+        .button.number { background-color: #ffffff; }
+  
