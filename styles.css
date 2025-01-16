@@ -6,6 +6,6 @@
         .button { width: 80px; height: 65px; margin: 15px; font-size: 35px; border: none; border-radius: 5px; cursor: pointer; }
         .button.operator { background-color: #ffd3b6; }
         .button.equal { background-color: #ffecb3; width: 80px; }
-        .button.clear { background-color: #f5d587; color: #fff; margin-right: 13px; }
+        .button.clear { background-color: #f5d587; color: #fff; margin-right: 10px; }
         .button.number { background-color: #ffffff; }
   
