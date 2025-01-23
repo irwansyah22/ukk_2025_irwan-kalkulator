@@ -71,14 +71,28 @@ body {
 }
 
 .button.equal {
-  background-color: #00d9ff;
+  background-color: #00d9ff; /* Warna merah lembut */
   width: 80px;
+  color: #fff; /* Teks putih */
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.1s ease, box-shadow 0.3s ease; /* Animasi saat hover */
+}
+.button.equal:hover {
+  background-color: #ff1100; /* Warna lebih gelap saat hover */
+  box-shadow: 0 0 10px rgba(255, 17, 0, 0.7); /* Efek glow */
 }
 
 .button.clear {
-  background-color: #00d9ff;
-  color: #fff;
-  margin-right: 10px;
+  background-color: #00d9ff; /* Warna merah lembut */
+  color: #fff; /* Teks putih */
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.1s ease, box-shadow 0.3s ease; /* Animasi saat hover */
+}
+.button.clear:hover {
+  background-color: #ff1100; /* Warna lebih gelap saat hover */
+  box-shadow: 0 0 10px rgba(255, 17, 0, 0.7); /* Efek glow */
 }
 
 .button.number {
@@ -102,7 +116,7 @@ body {
   color: #fff; /* Teks putih */
   border: none;
   font-weight: bold;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Animasi saat hover */
+  transition: background-color 0.1s ease, box-shadow 0.3s ease; /* Animasi saat hover */
 }
 
 .button.backspace:hover {
@@ -133,6 +147,6 @@ body {
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
   }
   100% {
-    box-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
   }
 }
