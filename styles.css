@@ -9,6 +9,7 @@ body {
 }
 
 .calculator {
+  width: 470px;
   background-color: #fff;
   padding: 15px;
   border-radius: 10px;
@@ -16,6 +17,7 @@ body {
   position: relative; /* Ensure the glow effect stays within bounds */
   overflow: hidden;
   transition: box-shadow 0.1s ease;
+  
 }
 
 .calculator:hover {
@@ -45,7 +47,7 @@ body {
 }
 
 .display {
-  width: 40%;
+  width: 45%;
   height: 45px;
   text-align: right;
   font-size: 25px;
