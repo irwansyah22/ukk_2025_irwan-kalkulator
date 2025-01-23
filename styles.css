@@ -67,7 +67,16 @@ body {
 }
 
 .button.operator {
-  background-color: #ffe600;
+  background-color: #e5ff00; /* Warna merah lembut */
+  width: 80px;
+  color: #fff; /* Teks putih */
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.1s ease, box-shadow 0.3s ease; /* Animasi saat hover */
+}
+.button.operator:hover {
+  background-color: #00ffea; /* Warna lebih gelap saat hover */
+  box-shadow: 0 0 10px #00ffea(255, 17, 0, 0.7); /* Efek glow */
 }
 
 .button.equal {
@@ -96,7 +105,15 @@ body {
 }
 
 .button.number {
-  background-color: #ffffff;
+  background-color: #ffffff; /* Warna merah lembut */
+  color: #070707; /* Teks putih */
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.1s ease, box-shadow 0.3s ease; /* Animasi saat hover */
+}
+.button.number:hover {
+  background-color: #00d9ff; /* Warna lebih gelap saat hover */
+  box-shadow: 0 0 10px #00d9ff(0, 0, 0); /* Efek glow */
 }
 
 .calculator {
