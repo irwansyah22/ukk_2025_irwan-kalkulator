@@ -36,12 +36,21 @@
     </div>
     <script>
         function formatNumber(num) {
-            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            // Pastikan desimal tidak diubah oleh format angka
+            const [integer, decimal] = num.toString().split(".");
+            const formattedInteger = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            return decimal ? `${formattedInteger},${decimal}` : formattedInteger;
         }
 
         function appendValue(value) {
             const display = document.getElementById('display');
-            display.value += value;
+            if (value === '/') {
+                display.value += '÷'; // Tampilkan ÷ pada layar
+            } else if (value === '*') {
+                display.value += 'x'; // Tampilkan x pada layar
+            } else {
+                display.value += value; // Tambahkan karakter biasa
+            }
         }
 
         function backspace() {
@@ -52,8 +61,13 @@
         function calculate() {
             const display = document.getElementById('display');
             try {
-                const result = eval(display.value);
-                display.value = formatNumber(result); // Format hasil dengan titik pemisah ribuan
+                // Ganti simbol ÷ menjadi / dan x menjadi * untuk evaluasi
+                const expression = display.value
+                    .replace(/÷/g, '/')
+                    .replace(/x/g, '*')
+                    .replace(/,/g, '.'); // Pastikan desimal menggunakan titik untuk evaluasi
+                const result = eval(expression);
+                display.value = formatNumber(result); // Format hasil dengan pemisah ribuan dan koma untuk desimal
             } catch (error) {
                 display.value = 'Error';
             }
@@ -61,3 +75,4 @@
     </script>
 </body>
 </html>
+``
