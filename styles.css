@@ -10,7 +10,7 @@ body {
 
 .calculator {
   width: 470px;
-  background-color: #fff;
+  background-color: #ffffff8c;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 15px 15px 20px rgba(0,0,0,0.3);
@@ -91,10 +91,10 @@ body {
   align-items: center;
 }
 
-/* Hover effect for buttons */
+/* Efek hover untuk tombol */
 .button:hover {
   background-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 15px rgba(0, 0, 255, 0.3); /* Soft glow effect */
+  box-shadow: 0 0 15px rgba(0, 0, 255, 0.3); /* Efek cahaya lembut */
 }
 
 .button.backspace {
@@ -106,8 +106,8 @@ body {
 }
 
 .button.backspace:hover {
-  background-color: #ff3d2e; /* Warna lebih gelap saat hover */
-  box-shadow: 0 0 10px rgba(255, 61, 46, 0.7); /* Efek glow */
+  background-color: #ff1100; /* Warna lebih gelap saat hover */
+  box-shadow: 0 0 10px rgba(255, 17, 0, 0.7); /* Efek glow */
 }
 
 
