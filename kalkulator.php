@@ -1,26 +1,19 @@
 <?php
     $display = '';
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if (isset($_POST['clear'])) {
-            $display = '';
-        } else if (isset($_POST['expression'])) {
-            $expression = $_POST['expression'];
-            $display = eval("return $expression;");
-        }
-    }
 ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <title>Kalkulator Sederhana</title>
-    <link rel="stylesheet" href="styles.css"
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="calculator">
         <form method="post">
             <div class="display-container">
-                <button type="submit" name="clear" class="button clear">C</button>
+                <button type="submit" name="clear" class="button clear" onclick="document.getElementById('display').value = '';">C</button>
+                <button type="button" class="button backspace" onclick="backspace()">⌫</button>
                 <input type="text" name="expression" class="display" id="display" value="<?= htmlspecialchars($display) ?>" readonly>
             </div>
             <button type="button" class="button number" onclick="appendValue('7')">7</button>
@@ -37,13 +30,33 @@
             <button type="button" class="button operator" onclick="appendValue('-')">−</button><br>
             <button type="button" class="button number" onclick="appendValue('.')">.</button>
             <button type="button" class="button number" onclick="appendValue('0')">0</button>
-            <button type="submit" class="button equal">=</button>
+            <button type="button" class="button equal" onclick="calculate()">=</button>
             <button type="button" class="button operator" onclick="appendValue('+')">+</button><br>
         </form>
     </div>
     <script>
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
         function appendValue(value) {
-            document.getElementById('display').value += value;
+            const display = document.getElementById('display');
+            display.value += value;
+        }
+
+        function backspace() {
+            const display = document.getElementById('display');
+            display.value = display.value.slice(0, -1);
+        }
+
+        function calculate() {
+            const display = document.getElementById('display');
+            try {
+                const result = eval(display.value);
+                display.value = formatNumber(result); // Format hasil dengan titik pemisah ribuan
+            } catch (error) {
+                display.value = 'Error';
+            }
         }
     </script>
 </body>

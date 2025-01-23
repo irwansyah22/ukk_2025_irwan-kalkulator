@@ -45,7 +45,7 @@ body {
 }
 
 .display {
-  width: 70%;
+  width: 40%;
   height: 45px;
   text-align: right;
   font-size: 25px;
@@ -94,6 +94,21 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 15px rgba(0, 0, 255, 0.3); /* Soft glow effect */
 }
+
+.button.backspace {
+  background-color: #00d9ff; /* Warna merah lembut */
+  color: #fff; /* Teks putih */
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Animasi saat hover */
+}
+
+.button.backspace:hover {
+  background-color: #ff3d2e; /* Warna lebih gelap saat hover */
+  box-shadow: 0 0 10px rgba(255, 61, 46, 0.7); /* Efek glow */
+}
+
+
 
 .calculator {
   transition: transform 0.1s ease-in-out;
