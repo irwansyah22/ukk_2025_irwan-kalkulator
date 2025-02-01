@@ -1,6 +1,3 @@
-<?php
-    $display = '';
-?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -14,7 +11,7 @@
             <div class="display-container">
                 <button type="submit" name="clear" class="button clear" onclick="document.getElementById('display').value = '';">C</button>
                 <button type="button" class="button backspace" onclick="backspace()">⌫</button>
-                <input type="text" name="expression" class="display" id="display" value="<?= htmlspecialchars($display) ?>" readonly>
+                <input type="text" name="expression" class="display" id="display" readonly>
             </div>
             <button type="button" class="button number" onclick="appendValue('7')">7</button>
             <button type="button" class="button number" onclick="appendValue('8')">8</button>
