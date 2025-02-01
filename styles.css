@@ -105,8 +105,8 @@ body {
 }
 
 .button.number {
-  background-color: #ffffff; /* Warna merah lembut */
-  color: #070707e8; /* Teks putih */
+  background-color: #ffffff; /* Warna Putih */
+  color: #070707e8; /* Teks Gelap */
   border: none;
   font-weight: bold;
   transition: background-color 0.1s ease, box-shadow 0.3s ease; /* Animasi saat hover */
