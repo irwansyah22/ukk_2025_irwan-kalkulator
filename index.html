@@ -33,42 +33,65 @@
     </div>
     <script>
         function formatNumber(num) {
-            // Pastikan desimal tidak diubah oleh format angka
-            const [integer, decimal] = num.toString().split(".");
-            const formattedInteger = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            const [integer, decimal] = num.toString().split('.');
+            const formattedInteger = integer.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
             return decimal ? `${formattedInteger},${decimal}` : formattedInteger;
         }
-
+    
         function appendValue(value) {
             const display = document.getElementById('display');
+            const currentValue = display.value;
+    
+            // Cegah input operator di awal (kecuali tanda minus)
+            if (currentValue === '' && (value === '+' || value === '*' || value === '/')) {
+                return; 
+            }
+    
+            // Cegah operator berulang
+            const lastChar = currentValue.slice(-1);
+            if ((lastChar === '+' || lastChar === '-' || lastChar === 'x' || lastChar === '÷') &&
+                (value === '+' || value === '-' || value === '*' || value === '/')) {
+                return; 
+            }
+    
             if (value === '/') {
-                display.value += '÷'; // Tampilkan ÷ pada layar
+                display.value += '÷';
             } else if (value === '*') {
-                display.value += 'x'; // Tampilkan x pada layar
+                display.value += 'x';
             } else {
-                display.value += value; // Tambahkan karakter biasa
+                display.value += value;
             }
         }
-
+    
         function backspace() {
             const display = document.getElementById('display');
             display.value = display.value.slice(0, -1);
         }
-
+    
         function calculate() {
             const display = document.getElementById('display');
             try {
                 // Ganti simbol ÷ menjadi / dan x menjadi * untuk evaluasi
-                const expression = display.value
+                let expression = display.value
                     .replace(/÷/g, '/')
                     .replace(/x/g, '*')
-                    .replace(/,/g, '.'); // Pastikan desimal menggunakan titik untuk evaluasi
+                    .replace(/,/g, '.');
+    
+                // Hapus operator terakhir jika ada
+                while (/[+\-*/]$/.test(expression)) {
+                    expression = expression.slice(0, -1);
+                }
+    
+                // Evaluasi hasil perhitungan
                 const result = eval(expression);
-                display.value = formatNumber(result); // Format hasil dengan pemisah ribuan dan koma untuk desimal
+    
+                // Tampilkan hasil perhitungan
+                display.value = formatNumber(result);
             } catch (error) {
                 display.value = 'Error';
             }
         }
     </script>
+    
 </body>
 </html>
