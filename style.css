@@ -125,7 +125,7 @@ body {
 /* Efek hover untuk tombol */
 .button:hover {
   background-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 15px rgba(0, 0, 255, 0.3); /* Efek cahaya lembut */
+  box-shadow: 0 0 15px rgb(255, 255, 255); /* Efek cahaya lembut */
 }
 
 .button.backspace {
