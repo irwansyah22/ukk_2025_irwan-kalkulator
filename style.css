@@ -21,7 +21,7 @@ body {
 }
 
 .calculator:hover {
-  box-shadow: 0 0 30px rgba(0, 0, 255, 0.5); /* Glow effect when hovering over the calculator */
+  box-shadow: 0 0 30px rgb(255, 255, 255); /* Glow effect when hovering over the calculator */
 }
 
 .calculator::after {
